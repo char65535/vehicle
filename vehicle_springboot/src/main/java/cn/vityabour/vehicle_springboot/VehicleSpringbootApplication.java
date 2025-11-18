@@ -1,0 +1,13 @@
+package cn.vityabour.vehicle_springboot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class VehicleSpringbootApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(VehicleSpringbootApplication.class, args);
+    }
+
+}

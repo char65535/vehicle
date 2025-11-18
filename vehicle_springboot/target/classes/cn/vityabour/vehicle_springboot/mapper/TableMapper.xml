@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.vityabour.vehicle_springboot.mapper.TableMapper">
+    <insert id="insert">
+        insert into vehicle_table (brand, type, price, color, data_purchase)
+        values (#{brand}, #{type}, #{price}, #{color}, #{dataPurchase});
+    </insert>
+    <update id="update">
+        update vehicle_table
+        <set>
+            <if test="brand!=null and brand!=''">brand=#{brand},</if>
+            <if test="type!=null and type!=''">type=#{type},</if>
+            <if test="price!=null and price!=''">price=#{price},</if>
+            <if test="color!=null and color!=''">color=#{color},</if>
+            <if test="dataPurchase!=null and dataPurchase!=''">data_purchase=#{dataPurchase},</if>
+        </set>
+        where id=#{id};
+    </update>
+    <delete id="delete">
+        delete
+        from vehicle_table
+        where id = #{id};
+    </delete>
+
+    <select id="findALl" resultType="cn.vityabour.vehicle_springboot.pojo.Car">
+        select *
+        from vehicle_table;
+    </select>
+</mapper>
